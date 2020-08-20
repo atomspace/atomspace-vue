@@ -1,0 +1,72 @@
+{
+	"name": "@atomspace/vue",
+	"version": "0.1.0",
+	"description": "Neutrino preset for creating a Vue project",
+	"main": "src/index.js",
+	"scripts": {
+		"eslint": "eslint ./",
+		"pretest": "npm run eslint -- --max-warnings 0",
+		"lint": "npm run eslint -- --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/atomspace/atomspace-vue.git"
+	},
+	"keywords": [
+		"neutrino",
+		"neutrino-preset",
+		"atomspace",
+		"vue"
+	],
+	"author": "Atom Space",
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/atomspace/atomspace-vue/issues"
+	},
+	"homepage": "https://github.com/atomspace/atomspace-vue#readme",
+	"dependencies": {
+		"@constgen/neutrino-analysis": "~1.5.0",
+		"@constgen/neutrino-env": "~1.0.0",
+		"@constgen/neutrino-image-loader": "~1.5.0",
+		"@constgen/neutrino-mode": "~1.5.0",
+		"@constgen/neutrino-optimization": "~1.6.0",
+		"@constgen/neutrino-progress": "~1.5.0",
+		"@constgen/neutrino-vue-launcher": "~1.7.0",
+		"@constgen/neutrino-vue-loader": "~1.7.0",
+		"@constgen/neutrino-revision": "~1.7.0",
+		"@constgen/neutrino-sourcemap": "~1.5.0",
+		"@constgen/neutrino-static-files": "~1.5.0",
+		"@constgen/neutrino-svg-loader": "~1.5.0",
+		"@neutrinojs/clean": "9.3.0",
+		"@neutrinojs/web": "9.3.0",
+		"deepmerge": "4.2.2",
+		"neutrino-middleware-less-loader": "~6.0.1",
+		"neutrino-middleware-sass-loader": "~1.0.0",
+		"webpack-dev-server-waitpage": "1.0.0"
+	},
+	"devDependencies": {
+		"@atomspace/eslint": "5.1.2",
+		"eslint": "7.7.0",
+		"neutrino": "^9.3.0",
+		"webpack": "^4.44.1",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"peerDependencies": {
+		"neutrino": "^9.0.0",
+		"webpack": "^4.0.0",
+		"webpack-dev-server": "^3.0.0"
+	},
+	"engines": {
+		"node": ">=10",
+		"npm": ">=5.4.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"src",
+		"LICENSE",
+		"README.md",
+		"package.json"
+	]
+}
