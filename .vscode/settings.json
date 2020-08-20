@@ -14,10 +14,10 @@
 		"editor.insertSpaces": true
 	 },
 	"eslint.options": {
-		"extensions": [".js", ".jsx", ".html", ".md"],
+		"extensions": [".js", ".jsx", ".html", ".md", ".vue"],
 		"resolvePluginsRelativeTo": "./node_modules/.pnpm" // uncomment when `pnpm` is used instead of `npm`
 	},
-	"eslint.validate": ["javascript", "javascriptreact", "html", "markdown"],
+	"eslint.validate": ["javascript", "javascriptreact", "html", "markdown", "vue"],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	}

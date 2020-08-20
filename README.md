@@ -94,7 +94,7 @@ After installing Neutrino and this preset, add a new directory named `src` in th
 
 ```vue
 <template>
-   <h1>Hello</h1>;
+   <h1>Hello</h1>
 </template>
 ```
 
