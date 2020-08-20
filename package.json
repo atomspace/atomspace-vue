@@ -34,7 +34,7 @@
 		"@constgen/neutrino-vue-launcher": "~1.7.0",
 		"@constgen/neutrino-vue-loader": "~1.7.0",
 		"@constgen/neutrino-revision": "~1.7.0",
-		"@constgen/neutrino-sourcemap": "~1.5.0",
+		"@constgen/neutrino-sourcemap": "~1.7.0",
 		"@constgen/neutrino-static-files": "~1.5.0",
 		"@constgen/neutrino-svg-loader": "~1.5.0",
 		"@neutrinojs/clean": "9.3.0",
