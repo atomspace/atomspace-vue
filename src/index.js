@@ -24,6 +24,7 @@ let open = require('./middlewares/open');
 
 module.exports = function (customSettings = {}) {
 	return function (neutrino) {
+		let projectNodeModulesPath = path.resolve(process.cwd(), 'node_modules');
 		let faviconPath = path.resolve(neutrino.options.source, 'favicon.ico');
 		let faviconExists = fs.existsSync(faviconPath);
 		let { name, version } = neutrino.options.packageJson;
@@ -33,7 +34,7 @@ module.exports = function (customSettings = {}) {
 			compiler: false,
 			open: false,
 			server: {
-				port: 3000,
+				port: 8080,
 				public: true,
 				https: false,
 				proxy: {}
@@ -113,7 +114,10 @@ module.exports = function (customSettings = {}) {
 			.resolve
 				.alias
 					.set('@', path.resolve(process.cwd(), 'src'))
-					.set('vue$', settings.compiler ? 'vue/dist/vue.esm.js' : 'vue/dist/vue.runtime.esm.js')
+					.set('vue$', path.resolve(path.join(projectNodeModulesPath, 'vue/dist/vue.runtime.esm.js')))
+					.when(settings.compiler, function (alias) {
+						alias.set('vue$', path.resolve(path.join(projectNodeModulesPath, 'vue/dist/vue.esm.js')));
+					})
 					.end()
 				.end()
 			.module
