@@ -69,7 +69,10 @@ module.exports = function (customSettings = {}) {
 			},
 			html: {
 				title: settings.title,
-				favicon: faviconExists ? faviconPath : ''
+				favicon: faviconExists ? faviconPath : '',
+				meta: {
+					'X-UA-Compatible': { 'http-equiv': 'X-UA-Compatible', 'content': 'IE=edge' }
+				}
 			}
 		};
 		let vueSettings = {

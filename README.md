@@ -366,6 +366,32 @@ These are suggested workspace settings for VSCode editor:
 
 This should prevent constant building as you type code.
 
+### Modules resolving
+
+VSCode may not recognize modules paths started from `@`
+
+```js
+import module from '@/modules/module';
+```
+
+To be able to use the editor's autocompletion and autosuggestions in such paths add the next file into the project root folder and restart the editor
+
+#### jsconfig.json
+
+```json
+{
+   "allowJs": true,
+   "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+         "@/*": ["./src/*"]
+      }
+   },
+   "include": ["src/**/*", "test/**/*"],
+   "exclude": ["node_modules", "build"]
+}
+ ```
+
 [npm-image]: https://img.shields.io/npm/v/@atomspace/vue.svg
 [npm-downloads]: https://img.shields.io/npm/dt/@atomspace/vue.svg
 [npm-url]: https://npmjs.org/package/@atomspace/vue
