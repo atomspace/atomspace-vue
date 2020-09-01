@@ -106,7 +106,7 @@ Start the app in a development mode:
 npm start
 ```
 
-The console shows that application compilation is finished and started at "localhost:3000".
+The console shows that application compilation is finished and started at "localhost:8080".
 
 ## Building
 
@@ -169,7 +169,7 @@ module.exports = {
          server: {
             https: false,
             public: true, // use local network IP address for hosting during development
-            port: 3000,
+            port: 8080,
             proxy: {} // e.g. { '/api': 'http://localhost:8080' }
          },
 
