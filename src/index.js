@@ -20,6 +20,7 @@ let optimization = require('@constgen/neutrino-optimization');
 
 let clean = require('./middlewares/clean');
 let eslint = require('./middlewares/eslint');
+let pug = require('./middlewares/pug-loader');
 
 module.exports = function (customSettings = {}) {
 	return function (neutrino) {
@@ -89,6 +90,7 @@ module.exports = function (customSettings = {}) {
 		neutrino.use(clean());
 		neutrino.use(image());
 		neutrino.use(svg());
+		neutrino.use(pug());
 		neutrino.use(progress({ name: settings.title }));
 		neutrino.use(sourcemap({ prod: settings.sourcemaps }));
 		neutrino.use(revision());
