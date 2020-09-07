@@ -1,9 +1,9 @@
 let path = require('path');
 let fs = require('fs');
 
+let deepmerge = require('deepmerge');
 let less = require('neutrino-middleware-less-loader');
 let sass = require('neutrino-middleware-sass-loader');
-let deepmerge = require('deepmerge');
 let web = require('@neutrinojs/web');
 let vue = require('@constgen/neutrino-vue-loader');
 let image = require('@constgen/neutrino-image-loader');
@@ -140,6 +140,16 @@ module.exports = function (customSettings = {}) {
 						})
 						.end()
 					.end()
+				.when(neutrino.config.module.rule('style').oneOf('normal').uses.get('extract'), function (module) {
+					module
+						.rule('style')
+							.oneOf('normal')
+								.use('extract')
+									.tap((options = {}) => deepmerge(options, { esModule: false }))
+									.end()
+								.end()
+							.end();
+				})
 				.end()
 			.when(neutrino.config.plugins.get('extract'), function (config) {
 				config.plugin('extract')

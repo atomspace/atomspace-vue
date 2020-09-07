@@ -4,7 +4,7 @@ module.exports = function () {
 			.rule('pug')
 			.test(/\.pug$/)
 				.oneOf('pug-vue') // this applies to `<template lang="pug">` in Vue components
-					.resourceQuery(/vue/)
+					.resourceQuery(/^\?vue/)
 					.use('pug-loader')
 						.loader(require.resolve('pug-plain-loader'))
 						.end()
