@@ -31,6 +31,7 @@ module.exports = function (customSettings = {}) {
 		let appName = `${name} ${version}`;
 		let defaultSettings = {
 			launcher: true,
+			clean: true,
 			compiler: false,
 			open: false,
 			server: {
@@ -91,7 +92,7 @@ module.exports = function (customSettings = {}) {
 		neutrino.use(image());
 		neutrino.use(svg());
 		neutrino.use(pug());
-		neutrino.use(progress({ name: settings.title }));
+		neutrino.use(progress({ name: settings.title, clean: settings.clean }));
 		neutrino.use(sourcemap({ prod: settings.sourcemaps }));
 		neutrino.use(revision());
 		neutrino.use(staticFiles());

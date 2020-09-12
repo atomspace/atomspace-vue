@@ -159,6 +159,9 @@ module.exports = {
          // Inject an application startup launcher. When `false` you need to setup DOM mounting and HMR in your sorce code
          launcher: true,
 
+         // Clear console on every build
+         clean: true,
+
          // Include template runtime compiler. Increases the bundle ~10KB
          compiler: false,
 
