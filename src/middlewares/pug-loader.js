@@ -1,4 +1,6 @@
 module.exports = function () {
+	let pugPlainLoaderPath = require.resolve('@pointotech/pug-plain-loader');
+
 	return function (neutrino) {
 		neutrino.config.module
 			.rule('pug')
@@ -6,7 +8,7 @@ module.exports = function () {
 				.oneOf('pug-vue') // this applies to `<template lang="pug">` in Vue components
 					.resourceQuery(/^\?vue/)
 					.use('pug-loader')
-						.loader(require.resolve('pug-plain-loader'))
+						.loader(pugPlainLoaderPath)
 						.end()
 					.end()
 				.oneOf('pug-template') // this applies to `*.pug` imports inside JavaScript
@@ -14,7 +16,7 @@ module.exports = function () {
 						.loader(require.resolve('raw-loader'))
 						.end()
 					.use('pug-loader')
-						.loader(require.resolve('pug-plain-loader'))
+						.loader(pugPlainLoaderPath)
 						.end()
 					.end();
 	};

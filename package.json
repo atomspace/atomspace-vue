@@ -41,7 +41,7 @@
 		"@neutrinojs/web": "9.4.0",
 		"deepmerge": "4.2.2",
 		"pug": "3.0.0",
-		"pug-plain-loader": "1.0.0",
+		"@pointotech/pug-plain-loader": "1.0.1",
 		"raw-loader": "4.0.1",
 		"neutrino-middleware-less-loader": "~6.0.2",
 		"neutrino-middleware-sass-loader": "~2.0.0"
