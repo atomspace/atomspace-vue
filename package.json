@@ -1,6 +1,6 @@
 {
 	"name": "@atomspace/vue",
-	"version": "1.2.1",
+	"version": "1.3.0",
 	"description": "Neutrino preset for creating a Vue project",
 	"main": "src/index.js",
 	"scripts": {
