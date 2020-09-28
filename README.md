@@ -46,6 +46,12 @@ This preset does all dirty job for setting up Webpack for you. It implements a s
 
 ## Installation
 
+If you have an absolutely empty project you need to initialize it first. **You can skip this step if you already have `package.json` file**
+
+```bash
+npm init -y
+```
+
 `@atomspace/vue` can be installed with NPM. Inside your project, make sure `neutrino`, `webpack` and `@atomspace/vue` are development dependencies. Also you should install `vue`
 
 ```bash
@@ -91,6 +97,8 @@ module.exports = neutrino().webpack();
 ## Quickstart
 
 After installing Neutrino and this preset, add a new directory named `src` in the root of the project, with a single VUE file named `index.vue` in it. The preset cares about mounting to the `<div id="root"></div>` element and hot reload configuration. You only have to export your main component that refers to your application. Edit `src/index.vue` file with the following:
+
+**src/index.vue**
 
 ```vue
 <template>
