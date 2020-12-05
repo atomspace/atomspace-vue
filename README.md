@@ -19,10 +19,10 @@ This preset does all dirty job for setting up Webpack for you. It implements a s
 - Zero upfront configuration necessary to start developing and building a Vue web app
 - Modern Babel compilation supporting ES modules, last several major browser versions, async functions, dynamic imports, ES class properties, rest spread operators, decorators and automatic polyfills bound to platforms
 - Production-optimized bundles with minification and source maps
-- Tree-shaking to create smaller bundles
 - Consider external dependencies sourcemaps for better debugging during development
 - Chunking of external dependencies apart from application code. Share common dependencies between dynamic imports.
 - Webpack loaders for importing Vue components, TypeScript, CSS, LESS, SASS, images, icons, fonts and SVGs
+- CSS modules for `*.module.css` files and `<style module>` with support of preprocessors
 - Webpack Dev Server during development on "localhost" and local network IP for external devices access
 - Automatic creation of HTML pages, no templating of "index.html" necessary
 - Hot Module Replacement enabled
@@ -56,10 +56,12 @@ npm init -y
 
 ```bash
 npm install --save vue
-npm install --save-dev neutrino "@atomspace/vue" webpack webpack-cli webpack-dev-server
+npm install --save-dev neutrino "@atomspace/vue" webpack@^4.43.0 webpack-cli@^3.3.12 webpack-dev-server
 ```
 
 Now edit your project's `package.json` to add commands for starting and building the application:
+
+**package.json**
 
 ```json
 {
@@ -72,6 +74,8 @@ Now edit your project's `package.json` to add commands for starting and building
 
 Then add the new file `.neutrinorc.js` in the root of the project:
 
+**.neutrinorc.js**
+
 ```js
 let vue = require('@atomspace/vue');
 
@@ -83,6 +87,8 @@ module.exports = {
 ```
 
 And create a `webpack.config.js` file in the root of the project, that uses the Neutrino API to access the generated webpack config:
+
+**webpack.config.js**
 
 ```js
 let neutrino = require('neutrino');
