@@ -1,5 +1,5 @@
 module.exports = function () {
-	let pugPlainLoaderPath = require.resolve('@pointotech/pug-plain-loader');
+	let pugPlainLoaderPath = require.resolve('pug-plain-loader');
 
 	return function (neutrino) {
 		neutrino.config.module
