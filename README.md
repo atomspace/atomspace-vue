@@ -65,10 +65,10 @@ Now edit your project's `package.json` to add commands for starting and building
 
 ```json
 {
-  "scripts": {
-     "start": "webpack-dev-server",
-     "build": "webpack"
-  }
+   "scripts": {
+      "start": "webpack-dev-server",
+      "build": "webpack"
+   }
 }
 ```
 

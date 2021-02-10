@@ -47,8 +47,8 @@
 		"neutrino-middleware-sass-loader": "~2.1.0"
 	},
 	"devDependencies": {
-		"@atomspace/eslint": "5.2.0",
-		"eslint": "7.9.0",
+		"@atomspace/eslint": "6.3.0",
+		"eslint": "7.19.0",
 		"neutrino": "^9.5.0",
 		"webpack": "^4.44.1"
 	},

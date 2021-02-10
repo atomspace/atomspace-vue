@@ -1,3 +1,3 @@
-let neutrino = require('neutrino')
+let neutrino = require('neutrino');
 
 module.exports = neutrino().eslintrc();
