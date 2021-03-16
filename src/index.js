@@ -24,7 +24,7 @@ let pug = require('./middlewares/pug-loader');
 
 module.exports = function (customSettings = {}) {
 	return function (neutrino) {
-		let projectNodeModulesPath = path.resolve(process.cwd(), 'node_modules');
+		let projectPath = process.cwd();
 		let faviconPath = path.resolve(neutrino.options.source, 'favicon.ico');
 		let faviconExists = fs.existsSync(faviconPath);
 		let { name, version } = neutrino.options.packageJson;
@@ -118,10 +118,10 @@ module.exports = function (customSettings = {}) {
 				.end()
 			.resolve
 				.alias
-					.set('@', path.resolve(process.cwd(), 'src'))
-					.set('vue$', path.resolve(path.join(projectNodeModulesPath, 'vue/dist/vue.runtime.esm.js')))
+					.set('@', path.resolve(projectPath, 'src'))
+					.set('vue$', require.resolve('vue/dist/vue.runtime.esm.js', { paths: [projectPath] }))
 					.when(settings.compiler, function (alias) {
-						alias.set('vue$', path.resolve(path.join(projectNodeModulesPath, 'vue/dist/vue.esm.js')));
+						alias.set('vue$', require.resolve('vue/dist/vue.esm.js', { paths: [projectPath] }));
 					})
 					.end()
 				.end()
